@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_manager_flutter/firestore.dart';
+import 'package:task_manager_flutter/service/firestore.dart';
 
 class TaskBox extends StatefulWidget {
   const TaskBox({

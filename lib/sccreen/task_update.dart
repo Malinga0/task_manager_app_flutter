@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_manager_flutter/firestore.dart';
+import 'package:task_manager_flutter/service/firestore.dart';
 
 class taskupdate extends StatefulWidget {
   final String taskid;
@@ -57,7 +57,7 @@ class _taskupdateState extends State<taskupdate> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 170, 130, 240),
       appBar: AppBar(
-        title: Text("Task"),
+        title: Text("Task update"),
         elevation: 0,
       ),
       body: Container(

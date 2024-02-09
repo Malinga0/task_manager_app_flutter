@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:task_manager_flutter/firestore.dart';
-import 'package:task_manager_flutter/task_create.dart';
-import 'package:task_manager_flutter/task_update.dart';
+import 'package:task_manager_flutter/service/firestore.dart';
+import 'package:task_manager_flutter/sccreen/task_create.dart';
+import 'package:task_manager_flutter/sccreen/task_update.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -116,5 +116,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-class TaskupdateBox {}
