@@ -25,6 +25,7 @@ class _TaskBoxState extends State<TaskBox> {
     selectedDate = DateTime.now();
   }
 
+//get date and time
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? pickedDate = await showDatePicker(
       context: context,
@@ -54,6 +55,7 @@ class _TaskBoxState extends State<TaskBox> {
           key: _formKey,
           child: Column(
             children: [
+              //task title
               TextFormField(
                 controller: tasktitle,
                 decoration: InputDecoration(
@@ -67,6 +69,7 @@ class _TaskBoxState extends State<TaskBox> {
                   return null;
                 },
               ),
+              //task description
               TextFormField(
                 controller: taskdescription,
                 decoration: InputDecoration(
@@ -100,6 +103,7 @@ class _TaskBoxState extends State<TaskBox> {
           ),
         ),
       ),
+      //save task data
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           if (_formKey.currentState!.validate()) {

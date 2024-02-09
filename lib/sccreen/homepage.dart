@@ -19,9 +19,12 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.deepPurple[200],
       appBar: AppBar(
-        title: Text('Task Manager'),
+        title: Text(
+          'Task Manager',
+        ),
         elevation: 0,
       ),
+      //button for create new task
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           Navigator.push(
@@ -49,10 +52,10 @@ class _HomePageState extends State<HomePage> {
             children: snapshot.data!.docs.map((DocumentSnapshot document) {
               Map<String, dynamic>? data =
                   document.data() as Map<String, dynamic>?;
-              print('Data from Firestore: $data');
-              print('doc id: ${document.id}');
-              print(data);
-              if (data == null ||
+              // print('Data from Firestore: $data');
+              // print('doc id: ${document.id}');
+              // print(data);
+              if (data == null ||//check is that null data
                   !data.containsKey('tasktitle') ||
                   !data.containsKey('taskds') ||
                   !data.containsKey('time')) {
@@ -65,8 +68,10 @@ class _HomePageState extends State<HomePage> {
               String taskDescription = data['taskds'] ?? 'No description';
               String time = data['time'] ?? 'No due date';
               String docID = document.id;
-              print(docID);
-              print(taskTitle);
+              // print(docID);
+              // print(taskTitle);
+
+              //show card
               return Card(
                 elevation: 2,
                 margin: EdgeInsets.all(10),
@@ -83,6 +88,7 @@ class _HomePageState extends State<HomePage> {
                   trailing: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
+                      //update button
                       IconButton(
                         onPressed: () {
                           Navigator.push(
@@ -99,6 +105,7 @@ class _HomePageState extends State<HomePage> {
                         },
                         icon: Icon(Icons.edit),
                       ),
+                      //delete button
                       IconButton(
                         onPressed: () {
                           firestoreservice.deletetask(docID);
